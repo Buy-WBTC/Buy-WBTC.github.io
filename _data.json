@@ -1,0 +1,107 @@
+{
+ "keyword": "buy wbtc",
+ "h1": "Buy WBTC",
+ "brand": "WBTC",
+ "niche": "token",
+ "verb": "Wrap",
+ "title": "Buy WBTC - Open App",
+ "meta_description": "buy wbtc via the official WBTC destination: verify the contract, review supported routes, and open the app before swapping or wrapping.",
+ "palette": {
+  "mode": "light",
+  "bg": "#FFFFFF",
+  "accent": "#F7931A",
+  "ink": "#211B34"
+ },
+ "hero_h2": "Get wrapped Bitcoin ready for Ethereum DeFi",
+ "hero_lead": "buy wbtc through the official WBTC destination to verify the Ethereum contract, review supported routes for wrapping Bitcoin, and move into DeFi with fewer wrong-token risks.",
+ "badge": "ERC-20",
+ "widget": {
+  "from": "BTC",
+  "from_net": "Bitcoin",
+  "to": "WBTC",
+  "to_net": "Ethereum",
+  "action": "Open WBTC App"
+ },
+ "trust": [
+  "Official domain: wbtc.network",
+  "Ethereum ERC-20 token",
+  "Contract 0x2260...C599"
+ ],
+ "what_is": "WBTC is Wrapped Bitcoin, an ERC-20 token designed to represent Bitcoin in Ethereum wallets and DeFi apps; verify the canonical contract on <a href=\"https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599\">Etherscan</a>.",
+ "how": [
+  {
+   "t": "Open the official destination",
+   "d": "Start from wbtc.network and confirm the domain before connecting a wallet or following any route."
+  },
+  {
+   "t": "Verify the asset",
+   "d": "Check the WBTC symbol, network, and Ethereum contract address before swapping, wrapping, or accepting a quote."
+  },
+  {
+   "t": "Choose a supported route",
+   "d": "Use a listed merchant, exchange, wallet, or DEX path that fits your jurisdiction, custody preference, and network choice."
+  },
+  {
+   "t": "Confirm in wallet",
+   "d": "After settlement, review the transaction on an explorer and make sure WBTC appears on the same network you used."
+  }
+ ],
+ "points": [
+  {
+   "h": "Bitcoin liquidity for DeFi",
+   "p": "WBTC brings Bitcoin exposure into ERC-20-compatible wallets, DEXs, lending markets, and smart contract apps."
+  },
+  {
+   "h": "Contract-first verification",
+   "p": "Use the <a href=\"https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599\">WBTC token contract</a> to avoid wrong-token copies before you trade or receive funds."
+  },
+  {
+   "h": "Know the wrapping model",
+   "p": "The WBTC framework uses merchant and custodian roles for minting and burning, so distinguish a market swap from a redemption route."
+  }
+ ],
+ "eeat": [
+  {
+   "text": "WBTC whitepaper",
+   "url": "https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf"
+  },
+  {
+   "text": "WBTC token contract",
+   "url": "https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+  },
+  {
+   "text": "Ethereum ERC-20 standard",
+   "url": "https://ethereum.org/developers/docs/standards/tokens/erc-20/"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Where should I buy WBTC?",
+   "a": "Start from the official WBTC domain to verify resources, then use a supported merchant, exchange, wallet, or DEX route appropriate for your jurisdiction and custody preferences.",
+   "open": true
+  },
+  {
+   "q": "Is WBTC the same as BTC?",
+   "a": "No. WBTC is a wrapped token that represents Bitcoin in Ethereum-compatible apps, while BTC remains the native Bitcoin asset.",
+   "open": false
+  },
+  {
+   "q": "Which WBTC contract should I check?",
+   "a": "On Ethereum, check <a href=\"https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599\">0x2260fac5e5542a773aa44fbcfedf7c193bc2c599</a> before accepting quotes or deposits.",
+   "open": false
+  },
+  {
+   "q": "Do I need ETH to move WBTC?",
+   "a": "On Ethereum mainnet, WBTC transfers and swaps require ETH for gas; on other supported networks, use that network's native gas token.",
+   "open": false
+  },
+  {
+   "q": "Can WBTC be redeemed for Bitcoin?",
+   "a": "Redemption depends on the merchant, exchange, or custodian route you use, so review KYC requirements, fees, timing, and network support first.",
+   "open": false
+  }
+ ],
+ "official_url": "https://wbtc.network/dashboard/partners",
+ "official_domain": "wbtc.network",
+ "footer_note": "Not the official app; verify the domain before connecting, and treat this as educational information, not financial advice."
+}
