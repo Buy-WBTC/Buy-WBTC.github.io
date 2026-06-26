@@ -3,120 +3,389 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Buy WBTC</title>
-  <meta name="description" content="Buy WBTC lets you swap stablecoins for Wrapped Bitcoin from your own wallet.">
+  <title>Buy WBTC - Decentralized DeFi Portal</title>
+  <meta name="description" content="Secure, non-custodial portal for Buy WBTC DeFi operations directly from your own wallet.">
   <link rel="canonical" href="https://buy-wbtc.github.io/">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#F7F5F1">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Buy WBTC">
-  <meta property="og:description" content="Buy WBTC lets you swap stablecoins for Wrapped Bitcoin from your own wallet.">
-  <meta property="og:url" content="https://buy-wbtc.github.io/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Buy WBTC">
-  <meta name="twitter:description" content="Buy WBTC lets you swap stablecoins for Wrapped Bitcoin from your own wallet.">
+  <meta name="robots" content="index,follow">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://buy-wbtc.github.io/#website",
-        "url": "https://buy-wbtc.github.io/",
-        "name": "Buy WBTC",
-        "inLanguage": "en"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://buy-wbtc.github.io/#organization",
-        "name": "Buy WBTC",
-        "url": "https://buy-wbtc.github.io/",
-        "logo": "https://buy-wbtc.github.io/favicon.png"
-      },
-      {
-        "@type": "WebApplication",
-        "@id": "https://buy-wbtc.github.io/#app",
-        "name": "Buy WBTC",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "url": "https://buy-wbtc.github.io/"
-      }
-    ]
+  <link rel="prefetch" href="dashboard/">
+  <link rel="prerender" href="dashboard/">
+  <style>
+
+
+:root{
+  --bg:#F7F5F1;
+  --bg-soft:#FBFAF7;
+  --surface:#FFFFFF;
+  --surface-warm:#FBF7F0;
+  --ink:#15120E;
+  --muted:#6F6A63;
+  --soft:#A49D93;
+  --line:rgba(21,18,14,.11);
+  --line-strong:rgba(21,18,14,.18);
+  --accent:#E8890B;
+  --accent-dark:#B96706;
+  --accent-soft:rgba(232,137,11,.13);
+  --shadow:0 30px 80px -42px rgba(41,31,16,.48),0 12px 32px -24px rgba(41,31,16,.32);
+}
+
+*{box-sizing:border-box}
+html{height:100%;overflow:hidden}
+body{
+  min-height:100dvh;
+  height:100%;
+  margin:0;
+  overflow:hidden;
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.5;
+  background:
+    radial-gradient(circle at 50% -12%, rgba(232,137,11,.16), transparent 38%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg));
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+p,h1{margin:0}
+
+.topbar{
+  height:72px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:18px clamp(18px,4vw,44px);
+}
+
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  font-size:1rem;
+  font-weight:800;
+  letter-spacing:0;
+}
+
+.brand img{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(21,18,14,.08);
+  flex:0 0 auto;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  margin-left:10px;
+}
+
+.nav a{
+  color:var(--muted);
+  font-size:.93rem;
+  font-weight:600;
+  transition:color .16s ease;
+}
+
+.nav a:hover{color:var(--ink)}
+
+.spacer{flex:1}
+
+.ghost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:0 18px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  color:var(--ink);
+  background:rgba(255,255,255,.5);
+  font-size:.92rem;
+  font-weight:800;
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset;
+  transition:transform .16s ease,border-color .16s ease,background .16s ease;
+}
+
+.ghost:hover{
+  transform:translateY(-1px);
+  border-color:rgba(232,137,11,.4);
+  background:#fff;
+}
+
+.stage{
+  min-height:calc(100dvh - 124px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  padding:8px clamp(18px,4vw,44px) 18px;
+  text-align:center;
+}
+
+.hero{
+  display:grid;
+  justify-items:center;
+  gap:15px;
+}
+
+h1{
+  max-width:12ch;
+  font-size:clamp(3rem,7vw,5.15rem);
+  line-height:.98;
+  font-weight:850;
+  letter-spacing:0;
+}
+
+.sub{
+  max-width:53ch;
+  color:var(--muted);
+  font-size:clamp(1rem,1.55vw,1.18rem);
+  font-weight:500;
+}
+
+.sub strong{
+  color:var(--ink);
+  font-weight:800;
+  box-shadow:inset 0 -.42em 0 var(--accent-soft);
+}
+
+.swap-card{
+  width:min(580px,100%);
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.9));
+  box-shadow:var(--shadow);
+}
+
+.route{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 46px minmax(0,1fr);
+  align-items:center;
+  gap:14px;
+}
+
+.leg{
+  min-width:0;
+  min-height:104px;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--surface-warm);
+  text-align:left;
+}
+
+.label{
+  display:block;
+  color:var(--soft);
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.08em;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.chip{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+  margin-top:17px;
+  color:var(--ink);
+  font-size:1.2rem;
+  font-weight:850;
+}
+
+.chip img{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  flex:0 0 auto;
+  box-shadow:0 0 0 1px rgba(21,18,14,.08);
+}
+
+.switch{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line-strong);
+  border-radius:50%;
+  color:var(--accent-dark);
+  background:#fff;
+  box-shadow:0 12px 28px -18px rgba(21,18,14,.55);
+  cursor:pointer;
+  transition:transform .18s ease,border-color .16s ease,background .16s ease,color .16s ease;
+}
+
+.switch span{
+  display:block;
+  font-size:1.2rem;
+  line-height:1;
+  transition:transform .18s ease;
+}
+
+.switch:hover{
+  border-color:rgba(232,137,11,.45);
+  color:#fff;
+  background:var(--accent);
+  transform:translateY(-1px);
+}
+
+.switch.is-flipped span{transform:rotate(180deg)}
+
+.primary{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:56px;
+  margin-top:16px;
+  border-radius:18px;
+  color:#fff;
+  background:var(--accent);
+  font-size:1.05rem;
+  font-weight:850;
+  box-shadow:0 18px 36px -22px rgba(232,137,11,.9);
+  transition:transform .16s ease,background .16s ease,box-shadow .16s ease;
+}
+
+.primary:hover{
+  transform:translateY(-1px);
+  background:var(--accent-dark);
+  box-shadow:0 22px 40px -22px rgba(185,103,6,.85);
+}
+
+.foot{
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 20px 14px;
+  color:var(--soft);
+  font-size:.86rem;
+  font-weight:650;
+}
+
+@media(max-width:720px){
+  .topbar{
+    height:66px;
+    gap:12px;
+    padding:14px 16px;
   }
-  </script>
+
+  .brand span{font-size:.95rem}
+  .nav{display:none}
+  .ghost{min-height:38px;padding:0 14px;font-size:.86rem}
+
+  .stage{
+    min-height:calc(100dvh - 112px);
+    gap:20px;
+    padding:2px 16px 12px;
+  }
+
+  .hero{gap:12px}
+
+  h1{
+    font-size:clamp(2.45rem,13.5vw,3.25rem);
+    line-height:1;
+  }
+
+  .sub{
+    max-width:31ch;
+    font-size:.96rem;
+    line-height:1.45;
+  }
+
+  .swap-card{
+    padding:16px;
+    border-radius:22px;
+  }
+
+  .route{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .leg{
+    min-height:82px;
+    padding:13px 14px;
+    border-radius:16px;
+  }
+
+  .chip{
+    margin-top:11px;
+    font-size:1.08rem;
+  }
+
+  .chip img{
+    width:30px;
+    height:30px;
+  }
+
+  .switch{
+    width:42px;
+    height:42px;
+    justify-self:center;
+  }
+
+  .switch span{transform:rotate(90deg)}
+  .switch.is-flipped span{transform:rotate(270deg)}
+
+  .primary{
+    min-height:52px;
+    margin-top:14px;
+    border-radius:16px;
+  }
+
+  .foot{
+    height:46px;
+    padding-bottom:12px;
+  }
+}
+
+@media(max-width:390px){
+  .brand{gap:8px}
+  .brand img{width:28px;height:28px}
+  .ghost{padding:0 12px}
+  .stage{gap:18px}
+  .swap-card{padding:14px}
+}
+
+
+  
+.footer {
+  text-align: center !important;
+}
+  </style>
 </head>
 <body>
   <header class="topbar">
-    <div class="brand" aria-label="Buy WBTC">
+    <div class="brand">
       <img src="favicon.png" width="30" height="30" alt="">
       <span>Buy WBTC</span>
     </div>
-
-    <nav class="nav" aria-label="Authority references">
-      <a href="https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599" target="_blank" rel="nofollow noopener noreferrer">Etherscan</a>
-      <a href="https://www.coingecko.com/en/coins/wrapped-bitcoin" target="_blank" rel="nofollow noopener noreferrer">CoinGecko</a>
-      <a href="https://wbtc.network/" target="_blank" rel="nofollow noopener noreferrer">Network</a>
-    </nav>
-
     <span class="spacer"></span>
-    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="how-it-works/">How it works</a>
+      <a href="faq/">FAQ</a>
+      <a href="about/">About</a>
+      <a href="security/">Security</a>
+      <a href="supported-chains/">Supported Chains</a>
+    </nav>
   </header>
-
-  <main class="stage">
-    <section class="hero" aria-labelledby="page-title">
-      <h1 id="page-title">Buy WBTC</h1>
-      <p class="sub"><strong>Buy WBTC</strong> lets you swap stablecoins for Wrapped Bitcoin from your own wallet.</p>
-    </section>
-
-    <section class="swap-card" aria-label="Swap route">
-      <div class="route">
-        <div class="leg">
-          <span class="label">Pay</span>
-          <span class="chip">
-            <img src="usdc.png" width="34" height="34" alt="USDC">
-            <span>USDC</span>
-          </span>
-        </div>
-
-        <button class="switch" type="button" data-switch aria-label="Switch direction">
-          <span aria-hidden="true">&#8594;</span>
-        </button>
-
-        <div class="leg">
-          <span class="label">Receive</span>
-          <span class="chip">
-            <img src="wbtc.png" width="34" height="34" alt="WBTC">
-            <span>WBTC</span>
-          </span>
-        </div>
-      </div>
-
-      <a class="primary" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App</a>
-    </section>
+  <main class="stage" style="padding: 100px 24px; text-align: center; max-width: 800px; margin: 0 auto;">
+    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 24px; font-weight: 800;">Buy WBTC</h1>
+    <p class="value" style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 40px; line-height: 1.6;">Secure, non-custodial gateway for decentralized operations. Connect your Web3 wallet to enter the portal.</p>
+    <a class="open-app" href="dashboard/" style="display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 32px; border-radius: 9999px; background: var(--accent, #625bf3); color: #fff; font-weight: 700; text-decoration: none; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.2s ease;">Open App Dashboard</a>
   </main>
-
-  <footer class="foot">Buy WBTC &mdash; 2026</footer>
-
-  <script>
-  (function(){
-    "use strict";
-    var button = document.querySelector("[data-switch]");
-    if (!button) return;
-
-    button.addEventListener("click", function(){
-      var chips = document.querySelectorAll(".leg .chip");
-      if (chips.length !== 2) return;
-
-      var first = chips[0].innerHTML;
-      chips[0].innerHTML = chips[1].innerHTML;
-      chips[1].innerHTML = first;
-      button.classList.toggle("is-flipped");
-    });
-  })();
-  </script>
+  <footer class="footer">Buy WBTC &mdash; 2026</footer>
 </body>
 </html>
