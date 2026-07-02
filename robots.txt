@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://buy-wbtc.github.io/sitemap.xml
