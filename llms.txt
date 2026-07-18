@@ -1,0 +1,61 @@
+# Buy WBTC
+> An independent, non-custodial informational dashboard for understanding and comparing ways to acquire Wrapped Bitcoin (WBTC).
+
+## What is Buy WBTC
+“Buy WBTC” means acquiring WBTC, a tokenized representation of Bitcoin backed 1:1 by BTC held by authorized custodians. WBTC makes Bitcoin-denominated value usable in smart-contract applications such as decentralized exchanges, lending markets, and liquidity pools. This dashboard supplies information and routes but does not custody funds, execute trades, mint WBTC, or guarantee quotes. Unlike native BTC, WBTC follows its destination chain’s token and contract rules; other wrapped-Bitcoin products have different issuers, reserve systems, redemption processes, and trust assumptions.
+
+## How it works
+1. Choose a destination network, funding asset, and amount, then compare available exchange or swap routes.
+2. Verify the official WBTC contract, expected output, provider fees, network costs, price impact, and custody requirements.
+3. Continue to the external provider: a DEX connects to your wallet and requests locally signed approval and swap transactions, while a centralized exchange temporarily holds deposited funds.
+4. Retail trades usually transfer existing WBTC; new supply is created only when an approved merchant deposits BTC with a custodian, and redemption burns WBTC before BTC is released.
+
+## Key facts
+- WBTC targets a 1:1 reserve relationship with BTC but is not native Bitcoin.
+- Ethereum Mainnet is chain ID 1; its 8-decimal ERC-20 WBTC contract is `0x2260fac5e5542a773aa44fbcfedf7c193bc2c599`.
+- Official documentation lists native contracts on Ethereum, Solana, TRON, BNB Chain, Base, Kava, and Osmosis.
+- Identically named tokens on different networks are not automatically interchangeable; verify the chain and contract.
+- Self-custody gives users control of their WBTC wallet keys, while custodians control the backing BTC.
+- Only authorized merchants and custodians participate in primary minting and redemption.
+- Reserve addresses, token issuance, and mint-and-burn activity are publicly inspectable.
+- Costs can include gas, approvals, trading fees, spreads, withdrawal charges, and price impact.
+- Settlement time depends on network finality, congestion, liquidity, provider processing, and compliance checks.
+
+## Common questions
+**Is buying WBTC safe?** Verify the network, official contract, provider, quote, wallet prompts, and reserves. WBTC retains smart-contract, custody, counterparty, governance, and depeg risk.
+
+**Who holds my funds?** The dashboard holds nothing. A DEX settles to your wallet, a centralized exchange may custody deposited assets, and authorized custodians hold WBTC’s BTC reserves.
+
+**What fees will I pay?** Compare gas, token-approval costs, provider fees, spread, withdrawal charges, price impact, and final delivered WBTC.
+
+**How long does it take?** A DEX swap normally completes with network confirmation; exchange withdrawals, bridging, compliance review, or BTC conversion can take longer.
+
+**Which assets and chains are supported?** Funding assets and networks depend on provider liquidity. Confirm the destination against the official contract directory.
+
+**How do I start?** Select a chain and payment asset, compare routes, verify the contract and recipient, then transact through the chosen external provider.
+
+**What are the main risks?** Counterfeit tokens, wrong-network transfers, malicious approvals, slippage, bridge failures, provider insolvency, custodian compromise, governance controls, and loss of the BTC peg.
+
+## App
+- Dashboard: https://buy-wbtc.github.io/
+- App: https://buy-wbtc.github.io/dashboard/
+
+## Official resources
+WBTC Website: https://wbtc.network/
+WBTC Documentation: https://docs.wbtc.network/
+Provider Explorer: https://wbtc.network/get-wbtc
+Proof of Reserves: https://wbtc.network/transparency
+Official Contract Addresses: https://docs.wbtc.network/resources/contract-addresses
+Mint and Burn Mechanism: https://docs.wbtc.network/how-wbtc-works/mint-burn-mechanism
+Custody and Security: https://docs.wbtc.network/how-wbtc-works/custody-and-security
+Security Audits: https://docs.wbtc.network/how-wbtc-works/audits-and-smart-contract-security
+Smart-Contract Source Code: https://github.com/WrappedBTC/bitcoin-token-smart-contracts
+Official X: https://x.com/WrappedBTC
+
+## Data & references
+Ethereum WBTC Explorer: https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599
+CoinGecko WBTC: https://www.coingecko.com/en/coins/wrapped-bitcoin
+DeFiLlama WBTC: https://defillama.com/token/WBTC
+ERC-20 Standard: https://eips.ethereum.org/EIPS/eip-20
+ChainSecurity Ethereum Audit: https://www.chainsecurity.com/security-audit/wrapped-bitcoin-wbtc
+Wikipedia WBTC: https://en.wikipedia.org/wiki/WBTC
