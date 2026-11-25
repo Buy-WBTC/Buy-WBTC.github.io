@@ -1,0 +1,1 @@
+{"name":"Buy WBTC","short_name":"Buy WBTC","description":"Buy WBTC on Ethereum by swapping ETH, USDC, USDT or other ERC-20 tokens through DEX routing. Non-custodial: you sign every swap from your own wallet.","start_url":"/","display":"standalone","background_color":"#f8f6f4","theme_color":"#f8f6f4","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}
