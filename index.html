@@ -1,284 +1,241 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Buy WBTC — swap ETH or USDC for Wrapped Bitcoin</title>
-<meta name="description" content="Buy WBTC on Ethereum by swapping ETH, USDC, USDT or other ERC-20 tokens through DEX routing. Non-custodial: you sign every swap from your own wallet.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#f8f6f4">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy WBTC — Swap, Mint or Trade Into Wrapped Bitcoin</title>
+<meta name="description" content="Buy WBTC by swapping ETH or stablecoins on a DEX, minting through an authorized merchant against real BTC, or trading on an exchange — with real pairs, gas costs, price impact and custody steps.">
 <link rel="canonical" href="https://buy-wbtc.github.io/">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Buy WBTC"><meta property="og:title" content="Buy WBTC — swap ETH or USDC for Wrapped Bitcoin"><meta property="og:description" content="Buy WBTC on Ethereum by swapping ETH, USDC, USDT or other ERC-20 tokens through DEX routing. Non-custodial: you sign every swap from your own wallet."><meta property="og:url" content="https://buy-wbtc.github.io/"><meta property="og:image" content="https://buy-wbtc.github.io/og-image.png">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Buy WBTC — swap ETH or USDC for Wrapped Bitcoin"><meta name="twitter:description" content="Buy WBTC on Ethereum by swapping ETH, USDC, USDT or other ERC-20 tokens through DEX routing. Non-custodial: you sign every swap from your own wallet."><meta name="twitter:image" content="https://buy-wbtc.github.io/og-image.png">
-<link rel="icon" type="image/svg+xml" href="icon.svg">
-<link rel="apple-touch-icon" href="icon.svg">
-<link rel="manifest" href="manifest.webmanifest">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://buy-wbtc.github.io/#organization","name":"Buy WBTC","url":"https://buy-wbtc.github.io/","description":"Buy WBTC on Ethereum by swapping ETH, USDC, USDT or other ERC-20 tokens through DEX routing. Non-custodial: you sign every swap from your own wallet.","logo":{"@type":"ImageObject","@id":"https://buy-wbtc.github.io/#logo","url":"https://buy-wbtc.github.io/icon.svg","caption":"Buy WBTC"}},{"@type":"WebSite","@id":"https://buy-wbtc.github.io/#website","url":"https://buy-wbtc.github.io/","publisher":{"@id":"https://buy-wbtc.github.io/#organization"},"name":"Buy WBTC"},{"@type":"WebPage","@id":"https://buy-wbtc.github.io/#webpage","url":"https://buy-wbtc.github.io/","publisher":{"@id":"https://buy-wbtc.github.io/#organization"},"name":"Buy WBTC — swap ETH or USDC for Wrapped Bitcoin","isPartOf":{"@id":"https://buy-wbtc.github.io/#website"},"mainEntity":{"@id":"https://buy-wbtc.github.io/#app"},"breadcrumb":{"@id":"https://buy-wbtc.github.io/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://buy-wbtc.github.io/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buy-wbtc.github.io/"},{"@type":"ListItem","position":2,"name":"Buy WBTC","item":"https://buy-wbtc.github.io/"}]},{"@type":"WebApplication","@id":"https://buy-wbtc.github.io/#app","url":"https://buy-wbtc.github.io/","publisher":{"@id":"https://buy-wbtc.github.io/#organization"},"name":"Buy WBTC","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Buy WBTC on Ethereum by swapping ETH, USDC, USDT or other ERC-20 tokens through DEX routing. Non-custodial: you sign every swap from your own wallet.","isPartOf":{"@id":"https://buy-wbtc.github.io/#website"}},{"@type":"FAQPage","@id":"https://buy-wbtc.github.io/#faq","isPartOf":{"@id":"https://buy-wbtc.github.io/#webpage"},"about":{"@id":"https://buy-wbtc.github.io/#app"},"name":"Buy WBTC FAQ","mainEntity":[{"@type":"Question","name":"Can I buy WBTC with a card or bank transfer here?","acceptedAnswer":{"@type":"Answer","text":"No. This interface only swaps crypto you already hold. You need ETH, USDC, USDT or another ERC-20 token in an Ethereum wallet before you can buy WBTC."}},{"@type":"Question","name":"Which tokens can I use to buy WBTC?","acceptedAnswer":{"@type":"Answer","text":"You can sell ETH, USDC, USDT or other ERC-20 tokens that DEX routing can find liquidity for. The quote shows the route and expected WBTC before you sign."}},{"@type":"Question","name":"Is WBTC the same as Bitcoin?","acceptedAnswer":{"@type":"Answer","text":"No. WBTC is an ERC-20 token on Ethereum backed 1:1 by BTC held by a custodian. It follows Bitcoin\u0027s price but depends on that custodian and on smart contracts."}},{"@type":"Question","name":"Why do I need to approve a token before swapping?","acceptedAnswer":{"@type":"Answer","text":"ERC-20 tokens such as USDC and USDT need a one-time allowance so the router can move them for you. This is a separate transaction that costs gas. Selling ETH needs no approval."}},{"@type":"Question","name":"What do I pay gas in when I buy WBTC?","acceptedAnswer":{"@type":"Answer","text":"Gas on Ethereum is always paid in ETH, even when you sell a stablecoin. Keep some ETH in the wallet or you will not be able to approve or sign the swap."}},{"@type":"Question","name":"Can I turn WBTC back into BTC?","acceptedAnswer":{"@type":"Answer","text":"WBTC is redeemed for BTC through the custodian\u0027s own process, which this interface does not handle. You can also swap WBTC back to ETH or a stablecoin here at the quoted market price."}}]}]}
-</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Buy WBTC">
+<meta property="og:url" content="https://buy-wbtc.github.io/">
+<meta property="og:image" content="https://buy-wbtc.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Buy WBTC">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://buy-wbtc.github.io/#website", "url": "https://buy-wbtc.github.io/", "name": "Buy WBTC — Swap, Mint or Trade Into Wrapped Bitcoin"}, {"@type": "WebPage", "@id": "https://buy-wbtc.github.io/#webpage", "url": "https://buy-wbtc.github.io/", "name": "Buy WBTC — Swap, Mint or Trade Into Wrapped Bitcoin", "isPartOf": {"@id": "https://buy-wbtc.github.io/#website"}, "description": "Buy WBTC by swapping ETH or stablecoins on a DEX, minting through an authorized merchant against real BTC, or trading on an exchange — with real pairs, gas costs, price impact and custody steps.", "datePublished": "2026-11-28", "dateModified": "2026-11-28"}, {"@type": "SoftwareApplication", "name": "Buy WBTC", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://buy-wbtc.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Wrapping"}, {"@type": "ListItem", "position": 3, "name": "Buy WBTC"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it mean to buy WBTC instead of bitcoin itself?", "acceptedAnswer": {"@type": "Answer", "text": "Buying WBTC means acquiring a token on Ethereum that represents bitcoin held in reserve by a custodian, so the value can trade and plug into Ethereum apps rather than sitting only on the Bitcoin network."}}, {"@type": "Question", "name": "Can I buy WBTC without owning any BTC first?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Swapping ETH or a stablecoin for WBTC on a decentralized exchange, or buying it on a centralized exchange order book, both start from assets other than bitcoin itself. Minting is the only route that requires starting from BTC."}}, {"@type": "Question", "name": "Which trading pair gives the best price when I buy WBTC?", "acceptedAnswer": {"@type": "Answer", "text": "WBTC/ETH usually carries the deepest liquidity and tightest spread for mid-size orders. Stablecoin pairs are convenient for sizing a purchase in dollar terms but can show more slippage on venues with thinner pools."}}, {"@type": "Question", "name": "Do I need ETH to buy WBTC on a DEX?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you need ETH to pay gas for the swap transaction, separate from whatever asset you are swapping in. Without it in your wallet, the transaction cannot be signed."}}, {"@type": "Question", "name": "How long does minting WBTC take compared to a swap?", "acceptedAnswer": {"@type": "Answer", "text": "A DEX swap settles in one Ethereum block once signed. A merchant mint takes longer because it waits for your bitcoin deposit to reach enough confirmations before the custodian issues new tokens."}}, {"@type": "Question", "name": "Is there a minimum amount to buy WBTC through a merchant?", "acceptedAnswer": {"@type": "Answer", "text": "Each merchant sets its own minimum, and it generally sits well above what a typical DEX swap would involve, since minting is built for larger, deliberate conversions rather than small trades."}}, {"@type": "Question", "name": "How do I make sure the WBTC I bought is the real token?", "acceptedAnswer": {"@type": "Answer", "text": "Compare the contract address shown in your wallet against the canonical address published on the WBTC project site. A matching address is the only reliable check against a look-alike token."}}]}]}</script>
 <style>
-@font-face{font-family:'Inter';src:url('assets/inter.woff2') format('woff2');font-weight:400 700;font-display:swap}
-@font-face{font-family:'Space Grotesk';src:url('assets/space-grotesk.woff2') format('woff2');font-weight:500 700;font-display:swap}
-:root{
- --bg:#f8f6f4;--card:#fff;--ink:#1c1712;--muted:#737b88;--faint:#aeb4bf;
- --line:#efebe7;--line-2:#e5e0da;--panel:#f9f7f5;--panel-2:#f1ede9;
- --accent:#c04d00;--accent-hover:#a84300;--accent-ink:#a84300;--accent-soft:#fde9db;--accent-on:#ffffff;--promo:#fff1e6;--text-2:#4b5563;
- --shadow:0 1px 2px rgba(13,17,28,.04),0 24px 56px -40px rgba(13,17,28,.24);--pico-bg:#fff;--pico-ring:rgba(13,17,28,.06);
- --ease:cubic-bezier(.2,.7,.2,1);
- --head:"Space Grotesk","Arial",sans-serif;--body:"Inter","Arial",sans-serif;color-scheme:light}
+:root{--bg:#0E0C09;--surface:#1A1611;--text:#F3EEE4;--muted:#A1957D;--accent:#F7931A;--accent-ink:#1A1203;--radius:14px;--display:"Space Grotesk";--body:"Inter"}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:var(--ink);font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--bg)}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:none;-webkit-mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%);mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%)}
-a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;background:none;border:0;color:inherit}
-img{display:block;max-width:100%}
-h1,h2,h3{margin:0;font-family:var(--head);font-weight:500;letter-spacing:-.01em}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
-
-.nav{display:flex;align-items:center;gap:24px;padding:16px 24px;max-width:1280px;margin:0 auto;width:100%}
-.brand{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:500;font-size:20px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;flex:0 0 auto}
-.brand img{width:28px;height:28px}
-.nlinks{display:flex;align-items:center;gap:20px}
-.nlinks a{font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;transition:color .16s var(--ease)}
-.nlinks a:hover{color:var(--ink)}
-.spacer{flex:1}
-main{flex:1}
-.chain{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 12px;border-radius:10px;background:var(--panel-2);font-weight:500;font-size:14px;color:var(--ink);transition:background-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
-.chain img{width:20px;height:20px;border-radius:50%}
-.chain:hover{background:var(--line-2)}
-.chain .cv{width:12px;height:12px;color:var(--muted)}
-.connect{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:10px;background:var(--card);border:1px solid var(--line-2);color:var(--ink);font-weight:500;font-size:14px;transition:background-color .16s var(--ease),border-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
-.connect:hover{border-color:var(--faint);background:var(--panel)}
-
-.hero{display:flex;flex-direction:column;align-items:center;padding:32px 20px 48px}
-h1{font-size:clamp(36px,4.6vw,48px);line-height:1.08;letter-spacing:-.025em;text-align:center;color:var(--ink);margin:0 0 32px}
-
-.card{width:min(600px,100%);background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
-.tabs{display:flex;align-items:center;gap:4px;padding:20px 20px 16px}
-.tab{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:10px;font-weight:500;font-size:14px;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
-.tab:hover{background:var(--panel-2);color:var(--ink)}
-.tab.on{background:var(--accent-soft);color:var(--accent-ink)}
-.tabs .sp{flex:1}
-.tabs .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
-.tabs .ic:hover{background:var(--panel-2);color:var(--ink)}
-.tabs .ic svg{width:18px;height:18px}
-
-.promo{margin:0 20px;padding:32px;border-radius:12px;background:var(--promo);display:flex;align-items:center;gap:20px}
-.promo-txt{flex:1;min-width:0}
-.promo-h{font-family:var(--head);font-weight:500;font-size:clamp(22px,3.4vw,28px);line-height:1.2;letter-spacing:-.015em;color:var(--ink);margin:0 0 8px;text-wrap:balance}
-.promo-sub{font-size:15px;line-height:1.6;color:var(--text-2);margin:0;max-width:34ch}
-.promo-grid{flex:0 0 auto;display:grid;grid-template-columns:repeat(2,auto);gap:16px}
-.pico{width:52px;height:52px;border-radius:50%;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);display:grid;place-items:center;overflow:hidden}
-.pico img{width:100%;height:100%;object-fit:contain;display:block}
-.promo-flow{flex-direction:column;align-items:stretch;gap:24px}
-.promo-flow .promo-sub{max-width:44ch}
-.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.flow li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
-.flow li+li::before{content:"";position:absolute;top:22px;right:calc(50% + 30px);width:calc(100% - 52px);height:1px;background:var(--line-2)}
-.fi{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);color:var(--accent-ink)}
-.fi img{width:100%;height:100%;display:block}
-.fi svg{width:20px;height:20px}
-.fi.on{background:var(--accent);color:var(--accent-on);box-shadow:none}
-.flow b{margin-top:4px;font-weight:500;font-size:14px;color:var(--ink)}
-.flow small{font-size:13px;line-height:1.4;color:var(--muted)}
-.cta-wrap{padding:20px}
-.cta{width:100%;height:60px;border-radius:12px;background:var(--accent);color:var(--accent-on);font-weight:500;font-size:16px;transition:background-color .16s var(--ease),transform .12s var(--ease)}
-.cta:hover{background:var(--accent-hover)}
-.cta:active{transform:scale(.99)}
-@media(max-width:470px){.promo{flex-direction:column;align-items:flex-start}.promo-grid{grid-template-columns:repeat(4,auto)}.promo-sub{max-width:none}}
-
-.learn{max-width:720px;margin:48px auto 0;width:100%;padding:0 24px 72px}
-.learn-h{font-size:14px;font-weight:500;color:var(--muted);text-align:center;margin:0 0 12px}
-.lrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:flex-start}
-.lcard{flex:0 0 auto;background:transparent;border:1px solid var(--line-2);border-radius:10px;transition:background-color .16s var(--ease),border-color .16s var(--ease)}
-.lcard>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;font-weight:500;font-size:14px;color:var(--text-2)}
-.lcard>summary::-webkit-details-marker{display:none}
-.lcard:hover{border-color:var(--faint);background:var(--card)}.lcard:hover>summary{color:var(--ink)}
-.lcard .chev{width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);margin-top:-4px;flex-shrink:0;transition:transform .16s var(--ease)}
-.lcard[open]{order:9;flex:0 0 100%;min-width:0;background:var(--card);border-color:var(--line-2);border-radius:16px;margin-top:8px}
-.lcard[open]>summary{height:auto;padding:20px 24px 0;color:var(--muted);font-size:13px}
-.lcard[open] .chev{transform:rotate(225deg);margin-top:4px}
-.lbody{padding:4px 24px 24px;max-width:660px}
-.lbody h2{font-size:22px;line-height:1.3;color:var(--ink);margin:8px 0 4px}
-.lbody h3{font-size:15px;line-height:1.4;color:var(--ink);margin:20px 0 4px}
-.lbody p{margin:0;font-size:15px;line-height:1.7;color:var(--text-2)}
-.lbody p+p{margin-top:8px}
-.lbody ul,.lbody ol{margin:8px 0 0;padding-left:20px}
-.lbody li{font-size:15px;line-height:1.7;color:var(--text-2);margin-bottom:4px}
-.lbody a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
-.lbody strong,.lbody b{color:var(--ink);font-weight:500}
-.lbody .tbl{overflow-x:auto;margin:16px 0 4px}
-.lbody table{width:100%;min-width:420px;border-collapse:collapse;font-size:14px}
-.lbody caption{text-align:left;color:var(--muted);font-size:13px;margin-bottom:8px}
-.lbody th,.lbody td{text-align:left;padding:8px 12px;border:1px solid var(--line-2);vertical-align:top;line-height:1.45}
-.lbody thead th{background:var(--panel);color:var(--ink);font-weight:500}
-.lbody tbody th{background:var(--panel);color:var(--muted);white-space:nowrap;font-weight:500}
-.lbody td{color:var(--text-2)}
-.lfaq h3{margin-top:16px;font-size:16px}
-
-footer{border-top:1px solid var(--line-2);background:var(--card)}
-.foot{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:20px 24px 24px;color:var(--muted);font-size:13px}
-.foot a{color:var(--muted);transition:color .16s var(--ease)}.foot a:hover{color:var(--ink)}.foot .sep{color:var(--faint)}
-
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,8px);background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 16px;font-size:13px;box-shadow:0 16px 40px -16px rgba(13,17,28,.5);z-index:60;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;max-width:calc(100% - 32px)}
-.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
-
-@media(max-width:1120px){.nlinks{display:none}}
-@media(max-width:720px){.chain span{display:none}.chain{padding:0 8px;gap:4px}}
-@media(max-width:560px){
-  .nav{padding:12px 16px;gap:8px}
-  .brand{font-size:16px}
-  .brand img{width:24px;height:24px}
-  .chain{height:36px;padding:0 8px;gap:4px}
-  .chain span{display:none}
-  .connect{height:36px;padding:0 12px;font-size:13px}
-  .hero{padding:24px 16px 40px}
-  .tabs{padding:16px 16px 12px}.promo{margin:0 16px;padding:24px}.cta-wrap{padding:16px}.cta{height:56px}
-  .learn{margin-top:40px;padding:0 16px 56px}
-}
+html{scroll-behavior:smooth;scroll-padding-top:2rem}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--accent-ink)}
+a{color:inherit;text-underline-offset:.25em}
+a:hover{color:var(--accent)}
+button,input,select,textarea{font:inherit}
+input,select{color:var(--text);accent-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+img,svg{max-width:100%;vertical-align:middle}
+svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.c5e83f7{width:min(1200px,calc(100% - 4rem));margin-inline:auto}
+.c11bed1{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 12%,transparent)}
+.c56c7f2{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none;font:650 1.3rem/1.2 var(--display);letter-spacing:-.04em}
+.c3a6495{display:grid;place-items:center;width:36px;height:36px;background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--radius)*.5)}
+.c3a6495 svg{width:23px;height:23px}
+.c225902{display:flex;align-items:center;gap:1.8rem;font-size:.875rem;font-weight:550}
+.c225902 a{text-decoration:none}
+.c225902 .ca8f8d3{padding:.6rem 1rem;border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:var(--radius)}
+.cdc871c{padding-block:1.5rem;font-size:.8rem;color:var(--muted);overflow-wrap:anywhere}
+.c195838{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;margin:0;padding:0;list-style:none}
+.c195838 a{text-decoration:none}
+.c195838 [aria-current="page"]{color:var(--text)}
+.c8d96d1{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:start;gap:clamp(1.75rem,5vw,4rem);padding-block:2rem 3.5rem}
+.c7d83d5{min-width:0}
+.c9f35fd{display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.25rem;color:var(--muted);font-size:.875rem}
+.c9f35fd::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 12%,transparent)}
+h1{margin:0;font:550 clamp(2.65rem,5vw,4.75rem)/1.06 var(--display);letter-spacing:-.055em;overflow-wrap:anywhere;text-wrap:balance}
+h1 em{color:var(--accent);font-style:normal}
+.ce58d43{max-width:36rem;margin:1.6rem 0 2rem;color:var(--muted);font-size:1.1rem;line-height:1.8}
+.cb2423e{display:inline-flex;justify-content:center;align-items:center;gap:1.4rem;min-height:54px;padding:.9rem 1.4rem;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 86%,var(--text)));color:var(--accent-ink);border:1px solid color-mix(in srgb,var(--accent-ink) 12%,transparent);border-radius:var(--radius);font-weight:650;text-decoration:none;box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 20%,transparent);transition:transform .2s,box-shadow .2s}
+.cb2423e svg{width:20px;height:20px;flex:none}
+.cb2423e:hover{color:var(--accent-ink);transform:translateY(-2px);box-shadow:0 12px 26px color-mix(in srgb,var(--accent) 28%,transparent)}
+.ce36af2{display:flex;align-items:center;gap:.5rem;margin:1.2rem 0 0;color:var(--muted);font-size:.8rem}
+.ce36af2 svg{width:16px;height:16px;color:var(--accent)}
+.c9138ef{position:relative;min-width:0;padding:12px;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:calc(var(--radius) + 12px);background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 13%,var(--bg)),color-mix(in srgb,var(--surface) 70%,var(--bg)));box-shadow:0 28px 64px -28px color-mix(in srgb,var(--text) 24%,transparent)}
+.c4d1b28{padding:clamp(1.25rem,3vw,2rem);background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:var(--radius)}
+.c1bc5b4{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.7rem}
+.c1bc5b4 h2{margin:0;font:600 1.2rem/1.3 var(--display);letter-spacing:-.025em}
+.c5999fc{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);font-size:.72rem;white-space:nowrap}
+.c5999fc::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.c67b8e9{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);align-items:center;gap:.7rem;margin-bottom:1.7rem}
+.c0f9755{min-width:0;padding:.9rem 1rem;background:color-mix(in srgb,var(--bg) 70%,var(--surface));border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:calc(var(--radius)*.7)}
+.cbd5b99{display:block;margin-bottom:.65rem;color:var(--muted);font-size:.75rem}
+.cfd7657{display:flex;align-items:center;gap:.5rem;min-height:32px;font:600 .95rem/1.3 var(--display);overflow-wrap:anywhere}
+.cfd7657 img,.cfd7657 svg{width:auto;height:32px;max-width:100%;object-fit:contain}
+.cbcaec6{display:grid;place-items:center;width:36px;height:36px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:50%;color:var(--accent)}
+.cbcaec6 svg{width:18px;height:18px}
+.c32811d{display:block;margin-bottom:.55rem;font-size:.8rem;font-weight:550}
+.c6b7684{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border:1px solid color-mix(in srgb,var(--text) 19%,transparent);border-radius:calc(var(--radius)*.7);background:var(--bg);transition:border-color .2s}
+.c6b7684:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 13%,transparent)}
+.c6b7684 input{width:100%;min-width:0;padding:0;border:0;border-radius:0;background:var(--bg);font:550 1.9rem/1.5 var(--display);font-variant-numeric:tabular-nums}
+.c6b7684 input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.c6b7684 span{color:var(--muted);font-size:.8rem}
+.c0e091a{margin:.5rem 0 1.2rem;color:var(--muted);font-size:.73rem}
+.ceb095f{margin:-.65rem 0 1rem;color:var(--text);font-size:.8rem}
+.c42c925{padding:1.2rem;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:calc(var(--radius)*.7);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 8%,var(--surface)),var(--surface))}
+.c5e2468{display:block;color:var(--muted);font-size:.8rem}
+.cf7b91a{display:block;margin:.35rem 0 1.2rem;font:600 clamp(1.65rem,3vw,2.25rem)/1.25 var(--display);letter-spacing:-.035em;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.cf7b91a small{color:var(--muted);font:400 .8rem/1.5 var(--body);letter-spacing:0}
+.c3df1dc{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
+.c685a4f{display:block;color:var(--muted);font-size:.72rem}
+.ca61aae{display:block;margin-top:.2rem;font-size:.9rem;font-weight:600;font-variant-numeric:tabular-nums}
+.c4d1b28 .cb2423e{width:100%;margin-top:1.3rem;justify-content:space-between}
+.c600288{margin-top:1rem;color:var(--muted);font-size:.73rem}
+.c600288 summary{cursor:pointer;width:fit-content;text-underline-offset:.2em}
+.c600288 summary:hover{color:var(--text)}
+.c600288 p{margin:.7rem 0 0}
+.c109067{margin:0;font:550 1.75rem/1.2 var(--display);letter-spacing:-.035em}
+.ceb0034{padding:2rem 2.25rem;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius)}
+.ceb0034 .c109067{margin-bottom:1.5rem}
+.c3568ff{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain}
+.c63c9c1{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
+.c63c9c1 caption{text-align:left;margin-bottom:1rem;color:var(--muted)}
+.c63c9c1 th,.c63c9c1 td{padding:1rem 1.1rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent);vertical-align:top;overflow-wrap:anywhere}
+.c63c9c1 th{color:var(--muted);font-weight:500}
+.c63c9c1 thead{background:color-mix(in srgb,var(--accent) 7%,var(--surface))}
+.c63c9c1 thead th{color:var(--text);font-weight:600}
+.c63c9c1 tbody tr:last-child>*{border-bottom:0}
+.c63c9c1 tbody tr:hover{background:color-mix(in srgb,var(--accent) 4%,var(--surface))}
+.c75854c{max-width:820px;margin:4.5rem auto}
+.c40fbe0{margin:0 0 3.5rem;scroll-margin-top:2rem}
+.c1bc6e1{margin:0 0 1.25rem;font:550 clamp(1.65rem,3vw,2.25rem)/1.2 var(--display);letter-spacing:-.035em;text-wrap:balance}
+.c4c0ac9{color:var(--muted);font-size:1.025rem;line-height:1.9;overflow-wrap:anywhere}
+.c4c0ac9 p{margin:0 0 1.25rem}
+.c4c0ac9 h3{margin:1.75rem 0 .75rem;color:var(--text);font:600 1.25rem/1.35 var(--display);letter-spacing:-.02em}
+.c4c0ac9 strong{color:var(--text);font-weight:600}
+.c4c0ac9 a,.ce1fddd a,.cec5ea4 a{color:var(--accent);text-decoration-thickness:1px}
+.c4c0ac9 ul,.c4c0ac9 ol,.ce1fddd ul,.ce1fddd ol{padding-left:1.4rem}
+.c4c0ac9 li+li{margin-top:.55rem}
+.c4c0ac9 li::marker{color:var(--accent)}
+.c4c0ac9 blockquote{margin:1.5rem 0;padding:1rem 1.5rem;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;color:var(--text)}
+.c4c0ac9 img{height:auto;border-radius:var(--radius)}
+.c4c0ac9 table{width:100%;border-collapse:collapse}
+.c4c0ac9 td,.c4c0ac9 th{padding:.75rem;border-bottom:1px solid color-mix(in srgb,var(--text) 12%,transparent);text-align:left}
+.c772428{margin:.8rem 0;padding:0 1.4rem;border:1px solid color-mix(in srgb,var(--text) 12%,transparent);border-radius:var(--radius);background:var(--surface)}
+.cb922dc{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;min-height:72px;padding:1.2rem 0;cursor:pointer;list-style:none;font:550 1.05rem/1.5 var(--display)}
+.cb922dc::-webkit-details-marker{display:none}
+.cb922dc::after{content:"+";flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--accent) 10%,var(--surface));color:var(--accent);font:400 1.25rem/1 var(--body)}
+.c772428[open]{border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.c772428[open]>.cb922dc::after{content:"−"}
+.ce1fddd{padding:0 2.8rem 1.3rem 0;color:var(--muted);line-height:1.85;overflow-wrap:anywhere}
+.ce1fddd p{margin:.25rem 0 .75rem}
+.cca919a{display:grid;grid-template-columns:1fr 2fr;gap:2rem;padding:2.5rem 0;border-top:1px solid color-mix(in srgb,var(--text) 12%,transparent)}
+.c92e2a7{margin:0;padding:0;list-style:none}
+.cec5ea4{padding:.7rem 0;border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent);color:var(--muted);font-size:.875rem;overflow-wrap:anywhere}
+.cec5ea4:first-child{padding-top:0}
+.cec5ea4:last-child{border-bottom:0}
+.cece38b{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding-block:1.75rem 2.5rem;border-top:1px solid color-mix(in srgb,var(--text) 12%,transparent);color:var(--muted);font-size:.8rem}
+.c9d11a6{color:var(--text);font:600 1rem/1.3 var(--display);letter-spacing:-.025em}
+.cfef07c{margin:0}
+@media(min-width:1100px){.c9138ef{transform:rotate(1deg)}.c4d1b28{transform:rotate(-1deg)}}
+@media(max-width:850px){.c8d96d1{grid-template-columns:1fr;gap:2.5rem;padding-block:1.5rem 3.5rem}.c7d83d5{max-width:650px}.c9138ef{width:100%;max-width:580px;justify-self:center}.c75854c{margin-block:3.5rem}.c225902{gap:1rem}h1{max-width:14ch}}
+@media(max-width:540px){.c5e83f7{width:calc(100% - 2rem)}.c11bed1{min-height:76px;gap:1rem}.c225902>a:not(.ca8f8d3){display:none}.c225902 .ca8f8d3{padding:.5rem .8rem}.cdc871c{padding-block:1.1rem}.c8d96d1{padding-top:1rem}.c7d83d5>.cb2423e{width:100%;justify-content:space-between}.ce58d43{font-size:1rem}.c9138ef{padding:7px;border-radius:calc(var(--radius) + 7px)}.c4d1b28{padding:1.1rem}.c67b8e9{gap:.4rem;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr)}.cbcaec6{width:30px;height:30px}.c0f9755{padding:.8rem}.ceb0034{padding:1.4rem 1rem}.c63c9c1 th,.c63c9c1 td{padding:.85rem .65rem}.c772428{padding-inline:1rem}.ce1fddd{padding-right:0}.cca919a{grid-template-columns:1fr;gap:1.4rem}.cece38b{align-items:flex-start;flex-direction:column;gap:.65rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}.cb2423e:hover{transform:none}}
 </style>
-<link rel="prerender" href="/dashboard/">
-<link rel="prefetch" href="/dashboard/" as="document">
-<link rel="preload" href="/dashboard/" as="document">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-cv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 5 5 5-5"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6z"/><path d="m9 12 2 2 4-4"/></symbol>
-<symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="5" ry="2.5"/><path d="M4 7v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V7"/><path d="M10 15.5c.6 1.2 2.6 2 5 2 2.8 0 5-1.1 5-2.5v-4c0-1.4-2.2-2.5-5-2.5"/><path d="M20 15v4c0 1.4-2.2 2.5-5 2.5s-5-1.1-5-2.5v-2"/></symbol>
-<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M12 14.5v2"/></symbol>
-<symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
-<symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s-6 6.4-6 10.5a6 6 0 0 0 12 0c0-4.1-6-10.5-6-10.5z"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
-<symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></symbol>
-<symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a7.8 7.8 0 0 0 0-2l2-1.5-2-3.4-2.3 1a7.6 7.6 0 0 0-1.7-1L15 2.5h-4l-.4 2.6c-.6.3-1.2.6-1.7 1l-2.3-1-2 3.4L4.6 11a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.3-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.3 1 2-3.4z"/></symbol>
-</defs></svg>
-
-<header class="nav">
-  <a class="brand" href="index.html" aria-label="Buy WBTC home"><img src="icon.svg" alt=""><span>Buy WBTC</span></a>
-  <nav class="nlinks" aria-label="Primary">
-    <a href="#overview">What is WBTC</a>
-    <a href="#compare">WBTC vs BTC</a>
-    <a href="#how">How to buy</a>
-    <a href="#fees">Fees &amp; gas</a>
-    <a href="#security">Security</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-  <span class="spacer"></span>
-  <a class="chain" href="/dashboard/" style="text-decoration:none"><img src="assets/net-ethereum.svg" alt=""><span>Ethereum</span><svg class="cv" aria-hidden="true"><use href="#i-cv"/></svg></a>
-  <a class="connect" href="/dashboard/" style="text-decoration:none">Connect wallet</a>
-</header>
-
-<main>
-  <section class="hero">
-    <h1>Buy WBTC</h1>
-
-    <section class="card" aria-label="Buy WBTC">
-      <div class="tabs">
-        <button class="tab on" type="button">Buy</button>
-        <button class="tab" type="button">Sell</button>
-        <span class="sp"></span>
-        <button class="ic gear" type="button" aria-label="Settings" data-toast="Settings are disabled in this demo."><svg aria-hidden="true"><use href="#i-gear"/></svg></button>
-      </div>
-
-      <div class="promo">
-        <div class="promo-txt">
-          <h2 class="promo-h">Swap tokens for WBTC on Ethereum</h2>
-          <p class="promo-sub">Swap ETH, USDC or USDT for WBTC. You need crypto in your own Ethereum wallet first; no card purchases.</p>
-        </div>
-        <div class="promo-grid" aria-hidden="true">
-          <span class="pico"><img src="assets/coin-wbtc.svg" alt=""></span>
-          <span class="pico"><img src="assets/usd-coin-usdc.svg" alt=""></span>
-          <span class="pico"><img src="assets/tether-usdt.svg" alt=""></span>
-          <span class="pico"><img src="assets/ethereum-eth.svg" alt=""></span>
-        </div>
-      </div>
-
-      <div class="cta-wrap"><a class="cta" href="/dashboard/" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Buy WBTC</a></div>
-    </section>
-  </section>
-
-  <section class="learn" id="learn">
-    <p class="learn-h">Learn about buying WBTC</p>
-    <div class="lrow">
-      <details class="lcard" name="learn" id="overview"><summary><span>What is WBTC</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>What you get when you buy WBTC</h2>
-<p><strong>WBTC</strong> (Wrapped Bitcoin) is an ERC-20 token on Ethereum that is backed 1:1 by BTC held by a custodian. To buy WBTC here, you swap a token you already hold for it, and the WBTC arrives in your own wallet.</p>
-<h3>Who this is for</h3>
-<p>People who already have crypto in an Ethereum wallet and want Bitcoin price exposure they can use in Ethereum apps. This interface does not sell for cards or bank transfers, so you need ETH, USDC, USDT or another ERC-20 token first.</p>
-<h3>How the swap works</h3>
-<p>The interface asks DEX routing to search liquidity pools and returns a quote. You review it and sign from your wallet; the swap settles on-chain.</p></div></details>
-
-      <details class="lcard" name="learn" id="compare"><summary><span>WBTC vs BTC</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>WBTC vs native BTC</h2>
-<p>WBTC tracks the price of Bitcoin, but it is a different asset on a different network. The differences matter most for custody and redemption.</p>
-<div class="tbl"><table><caption>WBTC bought on a DEX vs holding native BTC</caption><thead><tr><th scope="col"></th><th scope="col">WBTC on Ethereum</th><th scope="col">Native BTC</th></tr></thead><tbody><tr><th scope="row">Network</th><td>Ethereum, as an ERC-20 token</td><td>Bitcoin network</td></tr><tr><th scope="row">Custody</th><td>Token sits in your wallet; the underlying BTC is held by a custodian</td><td>Held directly with your own keys</td></tr><tr><th scope="row">Use in DeFi</th><td>Works with Ethereum DEXs, lending markets and other contracts</td><td>Not usable in Ethereum contracts without wrapping</td></tr><tr><th scope="row">Redemption</th><td>Redeemed for BTC through the custodian's process, not by this interface</td><td>Nothing to redeem</td></tr></tbody></table></div>
-<h3>The trade-off</h3>
-<p>Holding WBTC adds custodian and smart contract risk that native BTC does not have. In return you get a token that Ethereum applications can handle.</p></div></details>
-
-      <details class="lcard" name="learn" id="how"><summary><span>How to buy</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>How to buy WBTC</h2>
-<h3>Before you start</h3>
-<p>You need an Ethereum wallet that already holds ETH, USDC, USDT or another ERC-20 token. Keep some ETH for gas even if you plan to sell a stablecoin.</p>
-<h3>Step by step</h3>
-<ol>
-<li>Connect your wallet and choose the token you want to sell, with WBTC as the token to buy.</li>
-<li>Enter an amount and review the quote, route, price impact and estimated gas.</li>
-<li>If you sell an ERC-20 token such as USDC or USDT, approve it once for this wallet. ETH needs no approval.</li>
-<li>Sign the swap in your wallet and wait for it to confirm on Ethereum.</li>
-<li>Check that the WBTC balance appears in your wallet; add the token contract manually if your wallet does not show it.</li>
-</ol></div></details>
-
-      <details class="lcard" name="learn" id="fees"><summary><span>Fees &amp; gas</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>What buying WBTC costs</h2>
-<h3>Gas</h3>
-<p>Gas is paid in ETH. The approval, if needed, and the swap are separate Ethereum transactions, each with its own gas cost. See how <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank" rel="nofollow noopener">gas works</a>.</p>
-<h3>Trading cost</h3>
-<p>The quote already reflects pool or aggregator fees and price impact. Your slippage tolerance sets how far the final price may move before the swap reverts.</p>
-<h3>Keep ETH in the wallet</h3>
-<p>If you sell USDC or USDT, you still need native ETH to pay gas. Without it you cannot approve or sign the swap.</p></div></details>
-
-      <details class="lcard" name="learn" id="security"><summary><span>Security</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>Staying safe when you buy WBTC</h2>
-<h3>Non-custodial by design</h3>
-<p>You connect your own wallet and sign every transaction yourself. The interface routes and quotes; it never holds your funds or keys.</p>
-<h3>Before you sign</h3>
-<ul>
-<li>Verify the WBTC contract address; fake and lookalike tokens exist.</li>
-<li>Approve only what you need, and revoke old <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/" target="_blank" rel="nofollow noopener">ERC-20</a> allowances you no longer use.</li>
-<li>Check the quote, price impact and slippage before confirming.</li>
-<li>WBTC depends on a custodian and on smart contracts, so risk is never zero.</li>
-</ul></div></details>
-
-      <details class="lcard" name="learn" id="faq"><summary><span>FAQ</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody lfaq"><h2>Buy WBTC FAQ</h2>
-<h3>Can I buy WBTC with a card or bank transfer here?</h3>
-<p>No. This interface only swaps crypto you already hold. You need ETH, USDC, USDT or another ERC-20 token in an Ethereum wallet before you can buy WBTC.</p>
-<h3>Which tokens can I use to buy WBTC?</h3>
-<p>You can sell ETH, USDC, USDT or other ERC-20 tokens that DEX routing can find liquidity for. The quote shows the route and expected WBTC before you sign.</p>
-<h3>Is WBTC the same as Bitcoin?</h3>
-<p>No. WBTC is an ERC-20 token on Ethereum backed 1:1 by BTC held by a custodian. It follows Bitcoin's price but depends on that custodian and on smart contracts.</p>
-<h3>Why do I need to approve a token before swapping?</h3>
-<p>ERC-20 tokens such as USDC and USDT need a one-time allowance so the router can move them for you. This is a separate transaction that costs gas. Selling ETH needs no approval.</p>
-<h3>What do I pay gas in when I buy WBTC?</h3>
-<p>Gas on Ethereum is always paid in ETH, even when you sell a stablecoin. Keep some ETH in the wallet or you will not be able to approve or sign the swap.</p>
-<h3>Can I turn WBTC back into BTC?</h3>
-<p>WBTC is redeemed for BTC through the custodian's own process, which this interface does not handle. You can also swap WBTC back to ETH or a stablecoin here at the quoted market price.</p></div></details>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="foot"><span>&copy; 2026 Buy WBTC</span><span class="sep">&middot;</span><a href="legal.html#privacy">Privacy</a><span class="sep">&middot;</span><a href="legal.html#terms">Terms</a><span class="sep">&middot;</span><span>Non-custodial &middot; WBTC on Ethereum</span></div>
-</footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
+<div class="c5e83f7">
+<nav class="c11bed1" aria-label="Main navigation">
+<a class="c56c7f2" href="#hero"><span class="c3a6495" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></svg></span>Compare</a>
+<div class="c225902"><a href="#facts">Key facts</a><a href="#guide">Guide</a><a href="#sources">Sources</a><a class="ca8f8d3" href="dashboard/">Swap ↗</a></div>
+</nav>
+<div class="cdc871c"><nav class="c195838" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Wrapping</span> <span>/</span> <span>Buy WBTC</span></nav></div>
+<section class="c8d96d1" id="hero" aria-labelledby="hero-title">
+<div class="c7d83d5">
+<p class="c9f35fd">Wrap & unwrap</p>
+<h1 id="hero-title">Buy <em>WBTC</em>.</h1>
+<p class="ce58d43">Buy WBTC today and you are choosing between three distinct paths into Wrapped Bitcoin: swap ETH or a stablecoin for the token on a decentralized exchange, mint it directly by sending bitcoin to an authorized merchant, or pick it up on a centralized exchange order book and withdraw it afterward. Each path lands the same ERC-20 asset in your address, but the price you pay, the gas you spend and the steps in between differ sharply from one route to the next.</p>
+<a class="cb2423e" href="dashboard/">Swap <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+<p class="ce36af2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Explore fees and timing below</p>
+</div>
+<aside class="c9138ef" aria-labelledby="estimator-title">
+<div class="c4d1b28">
+<div class="c1bc5b4"><h2 id="estimator-title">Wrap estimator</h2><span class="c5999fc">Auto-updating</span></div>
+<div class="c67b8e9">
+<div class="c0f9755"><span class="cbd5b99">From</span><div class="cfd7657"><img src="assets/tokens/btc.svg" alt="Bitcoin" width="28" height="28"></div></div>
+<span class="cbcaec6" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+<div class="c0f9755"><span class="cbd5b99">To</span><div class="cfd7657"></div></div>
+</div>
+<label class="c32811d" for="amount">Amount</label>
+<div class="c6b7684"><input id="amount" type="number" inputmode="decimal" min="1" max="1000000000" step="0.01" value="1000" aria-describedby="amount-hint amount-error"><span>units</span></div>
+<p class="c0e091a" id="amount-hint">Enter 1–1,000,000,000 units, up to 2 decimal places.</p>
+<p class="ceb095f" id="amount-error" hidden></p>
+<div class="c42c925" role="status" aria-live="polite" aria-atomic="true">
+<span class="c5e2468">Estimated amount received</span>
+<output class="cf7b91a" id="received" for="amount">—</output>
+<div class="c3df1dc">
+<div><span class="c685a4f">Estimated fee</span><output class="ca61aae" id="fee" for="amount">—</output></div>
+<div><span class="c685a4f">Estimated time</span><output class="ca61aae" id="time" for="amount">—</output></div>
+</div>
+</div>
+<a class="cb2423e" href="dashboard/">Swap <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+<details class="c600288"><summary>How the estimate is calculated</summary><p>Fee = 0.5 units + 0.35% of the amount, rounded to 2 decimals. Amount received = amount − fee. Time = 2 minutes + 1 minute per 10,000 units, rounded up.</p></details>
+<noscript><p class="c0e091a">Enable JavaScript to calculate fees and timing.</p></noscript>
+</div>
+</aside>
+</section>
+<section class="ceb0034" id="facts" aria-labelledby="facts-title"><h2 class="c109067" id="facts-title">Key facts</h2><div class="c3568ff" role="region" aria-label="Key facts table" tabindex="0"><table class="c63c9c1"><tbody><tr><th scope="row">Asset</th><td>WBTC — token representing custodied bitcoin</td></tr>
+<tr><th scope="row">Buy routes</th><td>DEX swap, merchant mint, or exchange order book</td></tr>
+<tr><th scope="row">Gas currency</th><td>ETH, for on-chain swaps and mints</td></tr>
+<tr><th scope="row">Main pairs</th><td>WBTC/ETH, WBTC/USDC, WBTC/USDT</td></tr>
+<tr><th scope="row">Mint minimum</th><td>Set per merchant, above a typical swap size</td></tr>
+<tr><th scope="row">Custody after purchase</th><td>Self-custody, any ERC-20-ready wallet</td></tr></tbody></table></div></section>
+<main class="c75854c" id="guide"><section class="c40fbe0"><h2 class="c1bc6e1">What It Means to Buy WBTC</h2><div class="c4c0ac9"><strong>To buy WBTC is to acquire a token that carries bitcoin's value onto Ethereum, where it trades, collateralizes loans and sits in liquidity pools the way any other ERC-20 does.</strong> Each unit is minted against bitcoin a custodian holds in reserve, and the circulating supply can be checked against that reserve on <a href="https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599" rel="nofollow noopener" target="_blank">Etherscan</a> at any time. When you buy WBTC you are not purchasing a claim on a promise that lives somewhere off-chain — you are buying a token that moves, trades and settles the instant it reaches your address, with no counterparty standing between you and the next person who holds it. That is the practical difference between holding WBTC and holding an exchange balance labeled bitcoin: once the token is yours, nothing further needs anyone's approval. The price you pay tracks spot bitcoin closely but is set independently, by whichever pool or order book fills your order, which is why the exact execution price can drift a little from a quote taken seconds earlier on a different venue.</div></section>
+<section class="c40fbe0"><h2 class="c1bc6e1">Three Ways to Buy WBTC</h2><div class="c4c0ac9">There are three practical routes to buy WBTC, and which one fits depends on what you already hold: crypto sitting on Ethereum, raw bitcoin you want converted, or a card and a willingness to withdraw afterward. None of the three is strictly better — they trade speed, paperwork and minimum size against each other, so the right pick changes with how much you are moving and what you are starting from.<h3>Swap ETH or a Stablecoin on a DEX</h3>The fastest route is a swap: connect a wallet, set WBTC as the token you want out, and let a decentralized exchange route your ETH or USDC through its deepest available pool. <a href="https://docs.uniswap.org/" rel="nofollow noopener" target="_blank">Uniswap's documentation</a> explains exactly how its router selects a path across pools, and the same logic carries over to any automated market maker that lists the pair. There is no sign-up and no waiting period — the swap settles as soon as the transaction confirms, which makes this the default choice for anyone who already holds assets on Ethereum.<h3>Mint Through an Authorized Merchant</h3>If you are starting from BTC itself rather than tokens already on Ethereum, a listed merchant will convert it directly: you send bitcoin, pass that merchant's verification step, and the custodian mints fresh WBTC to your Ethereum address once the deposit clears. This is the only one of the three routes that creates new supply instead of moving tokens that already exist between wallets, and it is the route large holders use specifically because it avoids moving a big order through a pool and pushing the price against themselves.<h3>Buy on a Centralized Exchange</h3>Several exchanges list WBTC directly against USD or stablecoin pairs, so you can place a market or limit order the way you would for any other asset and withdraw the token to your own address once it fills. It is the simplest checkout of the three, though it adds a withdrawal step before the asset is actually under your own custody, and exchange order books for WBTC are generally thinner than its on-chain pools, so a large market order can move the price more than the same size would on a deep DEX pair.</div></section>
+<section class="c40fbe0"><h2 class="c1bc6e1">Which Trading Pairs Help You Buy WBTC</h2><div class="c4c0ac9">Liquidity for WBTC concentrates in a handful of pairs, and the one you route through changes how much slippage a given order absorbs. A router will usually split a large order across more than one pool automatically, but it still helps to know which pairs are carrying the weight before you commit to a size.<h3>WBTC/ETH, the Deepest Pool</h3>The WBTC/ETH pair carries the heaviest volume on most decentralized exchanges, so a swap routed through it generally gives the tightest spread for mid-size orders, and it is the default path most routers pick first. If you already hold ETH, this pair also skips an extra conversion step entirely.<h3>Stablecoin Pairs for a Dollar-Denominated Buy</h3>Pairs against USDC or USDT let you size a purchase in dollar terms without first acquiring ETH, though a thinner stablecoin pool on some venues can mean a wider spread than routing through the ETH pair instead. You can check live pool depth across venues on <a href="https://defillama.com/protocol/wrapped-bitcoin" rel="nofollow noopener" target="_blank">DefiLlama</a> before deciding how to size an order, since depth shifts over time as liquidity providers move capital between pools.<h3>Cross-Chain Pairs Beyond Ethereum</h3>Bridged versions of WBTC trade on other networks too, each against that network's own stablecoins and native asset. Those pairs are usually shallower than the original Ethereum pools, so treat a cross-chain price as a secondary check rather than the reference quote for sizing an order.</div></section>
+<section class="c40fbe0"><h2 class="c1bc6e1">The Real Cost to Buy WBTC</h2><div class="c4c0ac9">Three costs stack on top of each other every time you buy WBTC on-chain: the network gas needed to execute the transaction, the trading fee the pool or exchange charges, and price impact from your own order size moving a pool's balance. A merchant mint swaps the pool fee for the merchant's own conversion fee, but still carries the Ethereum gas to receive the minted tokens. None of these costs are fixed in dollar terms — gas rises and falls with how busy Ethereum is at the moment you sign, and price impact only shows up once your order is large enough relative to the pool you are routing through.<table><thead><tr><th>Cost</th><th>Paid in</th><th>What drives it</th></tr></thead><tbody><tr><td>Network gas</td><td>ETH</td><td>Congestion on Ethereum when you sign</td></tr><tr><td>Pool or merchant fee</td><td>Deducted from the amount received</td><td>Fixed rate set by the pool or the merchant</td></tr><tr><td>Price impact</td><td>Worse execution price</td><td>Order size relative to available liquidity</td></tr></tbody></table></div></section>
+<section class="c40fbe0"><h2 class="c1bc6e1">Steps to Buy WBTC on a DEX</h2><div class="c4c0ac9">The on-chain route to buy WBTC follows close to the same sequence on almost every decentralized exchange, regardless of which chain or front end you use. Once you have done it once, repeating it for a second purchase takes a fraction of the time, since your wallet already remembers the approval from the first swap.<ul><li>Connect a wallet that already holds ETH for gas plus the asset you plan to swap.</li><li>Select WBTC as the token you want to receive and enter the amount.</li><li>Review the quoted price, the pool fee and the estimated price impact before confirming.</li><li>Approve the input token for the router the first time you swap it.</li><li>Sign the swap transaction and wait for the block to confirm.</li><li>Check the new WBTC balance in your wallet or on a block explorer.</li></ul></div></section>
+<section class="c40fbe0"><h2 class="c1bc6e1">Buy WBTC by Minting Through a Merchant</h2><div class="c4c0ac9">Minting is the route for anyone converting bitcoin they already hold rather than trading tokens that already sit on Ethereum. You work directly with a merchant inside the project's custodian network, and the bitcoin never passes through an exchange order book at all. The custodian and the merchant are deliberately separate roles, which is part of why the arrangement is auditable: one party holds the reserve, the other handles the conversion and the paperwork around it.<h3>Verification Before the Mint</h3>Each merchant runs its own identity check before accepting a BTC deposit, since it is the regulated party taking custody of the underlying coin on your behalf. Expect this step the first time you use a given merchant, even if later mints move faster once it is on file. The check typically covers who you are and where the bitcoin is coming from, which is standard for a party handling custody of someone else's funds.<h3>Minimum Amounts and Timing</h3>Merchants typically set a minimum deposit well above what a casual DEX swap would involve, and the mint itself waits for your bitcoin transaction to reach sufficient confirmations before fresh WBTC appears in your Ethereum address. Plan for the process to take noticeably longer than an on-chain swap, start to finish, especially the first time you work with a particular merchant.</div></section>
+<section class="c40fbe0"><h2 class="c1bc6e1">After You Buy WBTC: Taking Custody</h2><div class="c4c0ac9">However you acquire it, WBTC settles to an ordinary Ethereum address, so custody from that point on works exactly like holding any other ERC-20 token. There is nothing further to claim or activate — the balance is simply there, usable the moment the transaction confirms.<h3>Where to Hold It</h3>A hardware wallet or any self-custody wallet that already supports ERC-20 tokens will display and move WBTC without any extra setup; nothing about the token demands specialized wallet support. The same address can hold ETH for gas alongside it, so a single wallet covers both halves of every future transaction.<h3>Confirm You Hold the Real Token</h3>Occasional look-alike tokens copy the name, so match the contract address shown in your wallet against the canonical one listed on <a href="https://wbtc.network/" rel="nofollow noopener" target="_blank">the WBTC project site</a> and cross-checked on <a href="https://en.wikipedia.org/wiki/Wrapped_bitcoin" rel="nofollow noopener" target="_blank">Wikipedia's overview</a> before trusting a balance you did not personally mint or swap into.<h3>Using It Once It Is in Your Wallet</h3>From here the token behaves like any other ERC-20 holding: it can sit as collateral in a lending market, provide liquidity in a pool, or simply wait in your wallet until you decide to move it again.</div></section><section class="c40fbe0 c1d5518" id="related"><h2 class="c1bc6e1">Related tools</h2><div class="c4c0ac9"><ul><li><a href="https://unwrap-weth.github.io/">Unwrap WETH</a></li><li><a href="https://wrap-btc.github.io/">Wrap BTC explained</a></li><li><a href="https://swap-wbtc.github.io/">Swap WBTC guide</a></li><li><a href="https://trade-wbtc.github.io/">Trade WBTC</a></li><li><a href="https://sell-wbtc.github.io/">Sell WBTC</a></li></ul></div></section><details class="c772428"><summary class="cb922dc">What does it mean to buy WBTC instead of bitcoin itself?</summary><div class="ce1fddd">Buying WBTC means acquiring a token on Ethereum that represents bitcoin held in reserve by a custodian, so the value can trade and plug into Ethereum apps rather than sitting only on the Bitcoin network.</div></details>
+<details class="c772428"><summary class="cb922dc">Can I buy WBTC without owning any BTC first?</summary><div class="ce1fddd">Yes. Swapping ETH or a stablecoin for WBTC on a decentralized exchange, or buying it on a centralized exchange order book, both start from assets other than bitcoin itself. Minting is the only route that requires starting from BTC.</div></details>
+<details class="c772428"><summary class="cb922dc">Which trading pair gives the best price when I buy WBTC?</summary><div class="ce1fddd">WBTC/ETH usually carries the deepest liquidity and tightest spread for mid-size orders. Stablecoin pairs are convenient for sizing a purchase in dollar terms but can show more slippage on venues with thinner pools.</div></details>
+<details class="c772428"><summary class="cb922dc">Do I need ETH to buy WBTC on a DEX?</summary><div class="ce1fddd">Yes, you need ETH to pay gas for the swap transaction, separate from whatever asset you are swapping in. Without it in your wallet, the transaction cannot be signed.</div></details>
+<details class="c772428"><summary class="cb922dc">How long does minting WBTC take compared to a swap?</summary><div class="ce1fddd">A DEX swap settles in one Ethereum block once signed. A merchant mint takes longer because it waits for your bitcoin deposit to reach enough confirmations before the custodian issues new tokens.</div></details>
+<details class="c772428"><summary class="cb922dc">Is there a minimum amount to buy WBTC through a merchant?</summary><div class="ce1fddd">Each merchant sets its own minimum, and it generally sits well above what a typical DEX swap would involve, since minting is built for larger, deliberate conversions rather than small trades.</div></details>
+<details class="c772428"><summary class="cb922dc">How do I make sure the WBTC I bought is the real token?</summary><div class="ce1fddd">Compare the contract address shown in your wallet against the canonical address published on the WBTC project site. A matching address is the only reliable check against a look-alike token.</div></details></main>
+<section class="cca919a" id="sources" aria-labelledby="sources-title"><h2 class="c109067" id="sources-title">Sources</h2><div><ul class="c92e2a7"><li><a class="cec5ea4" href="https://wbtc.network/" rel="nofollow noopener" target="_blank">WBTC project</a></li>
+<li><a class="cec5ea4" href="https://docs.uniswap.org/" rel="nofollow noopener" target="_blank">Uniswap documentation</a></li>
+<li><a class="cec5ea4" href="https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599" rel="nofollow noopener" target="_blank">WBTC token on Etherscan</a></li>
+<li><a class="cec5ea4" href="https://en.wikipedia.org/wiki/Wrapped_bitcoin" rel="nofollow noopener" target="_blank">Wrapped bitcoin — Wikipedia</a></li></ul></div></section>
+<footer class="cece38b"><span class="c9d11a6">Compare with clarity.</span><p class="cfef07c">Updated Nov 28, 2026</p></footer>
+</div>
 <script>
-(function(){
-"use strict";
-var tabs=[].slice.call(document.querySelectorAll('.tab'));
-tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.classList.toggle('on',x===t);});});});
-
-var toast=document.getElementById('toast'),tT;
-function notify(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){toast.classList.remove('show');},3000);}
-[].slice.call(document.querySelectorAll('[data-toast]')).forEach(function(b){b.addEventListener('click',function(){notify(b.getAttribute('data-toast'));});});
-
-function openHash(){var id=location.hash.slice(1);if(!id)return;var c=document.getElementById(id);if(c&&c.matches&&c.matches('.lcard[name="learn"]'))c.open=true;}
-window.addEventListener('hashchange',openHash);openHash();
-[].slice.call(document.querySelectorAll('.nlinks a')).forEach(function(a){a.addEventListener('click',function(){var c=document.getElementById(a.getAttribute('href').slice(1));if(c&&c.matches('.lcard'))c.open=true;});});
+(() => {
+  const amount = document.getElementById('amount');
+  const received = document.getElementById('received');
+  const fee = document.getElementById('fee');
+  const time = document.getElementById('time');
+  const error = document.getElementById('amount-error');
+  const number = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  let timer;
+  function update() {
+    const value = amount.valueAsNumber;
+    const valid = amount.value.trim() !== '' && Number.isFinite(value) && amount.validity.valid;
+    amount.setAttribute('aria-invalid', String(!valid));
+    error.hidden = valid;
+    error.textContent = valid ? '' : 'Enter an amount from 1 to 1,000,000,000 with up to 2 decimal places.';
+    if (!valid) {
+      received.textContent = '—';
+      fee.textContent = '—';
+      time.textContent = '—';
+      return;
+    }
+    const amountCents = Math.round(value * 100);
+    const feeCents = 50 + Math.round(amountCents * 35 / 10000);
+    received.textContent = number.format((amountCents - feeCents) / 100) + ' units';
+    fee.textContent = number.format(feeCents / 100) + ' units';
+    time.textContent = (2 + Math.ceil(value / 10000)).toLocaleString('en-US') + ' min';
+  }
+  amount.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(update, 180);
+  });
+  amount.addEventListener('change', () => {
+    clearTimeout(timer);
+    update();
+  });
+  update();
 })();
 </script>
-</body></html>
+</body>
+</html>

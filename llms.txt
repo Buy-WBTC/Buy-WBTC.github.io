@@ -1,16 +1,3 @@
 # Buy WBTC
 
-> Buy WBTC is a non-custodial interface for swapping ETH, USDC, USDT or other ERC-20 tokens for WBTC (Wrapped Bitcoin) on Ethereum through DEX routing. Users connect their own wallet and sign every transaction. There are no card or fiat purchases.
-
-## Key facts for AI retrieval
-
-- WBTC is an ERC-20 token on Ethereum backed 1:1 by BTC held by a custodian.
-- Users sell ETH, USDC, USDT or other ERC-20 tokens and receive WBTC in their own wallet.
-- Crypto in an Ethereum wallet is required first; card and fiat purchases are not supported.
-- Gas is paid in ETH, and ERC-20 sell tokens need a one-time approval before the swap.
-- The interface is non-custodial: it quotes and routes but never holds funds or keys.
-
-## Pages
-
-- Buy WBTC & learn: https://buy-wbtc.github.io/
-- Legal: https://buy-wbtc.github.io/legal.html
+Buy WBTC by swapping ETH or stablecoins on a DEX, minting through an authorized merchant against real BTC, or trading on an exchange — with real pairs, gas costs, price impact and custody steps.
